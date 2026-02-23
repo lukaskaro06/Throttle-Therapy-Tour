@@ -9,7 +9,6 @@ const app = express();
 
 // Allow both localhost (development) and Vercel (production)
 app.use(cors());
-app.options("*", cors());
 app.use(express.json());
 
 app.post("/apply", async (req, res) => {
