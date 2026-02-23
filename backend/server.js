@@ -3,14 +3,20 @@ import cors from "cors";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 
-
-const cors = require("cors");
-app.use(cors());
-
 dotenv.config();
 
 const app = express();
-app.use(cors({ origin: "http://localhost:3000" }));
+
+// Allow both localhost (development) and Vercel (production)
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://throttle-therapy-tour.vercel.app",
+    ],
+  })
+);
+
 app.use(express.json());
 
 app.post("/apply", async (req, res) => {
@@ -29,7 +35,6 @@ app.post("/apply", async (req, res) => {
       },
     });
 
-    // This will throw an error if credentials are wrong
     await transporter.verify();
     console.log("SMTP connection verified");
 
