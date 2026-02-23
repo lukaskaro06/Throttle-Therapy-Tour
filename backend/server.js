@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://throttle-therapy-tour.vercel.app",
+      "https://throttle-therapy-tour.vercel.app/apply",
     ],
   })
 );
