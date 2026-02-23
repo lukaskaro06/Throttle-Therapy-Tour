@@ -1,0 +1,61 @@
+import express from "express";
+import cors from "cors";
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const app = express();
+app.use(cors({ origin: "http://localhost:3000" }));
+app.use(express.json());
+
+app.post("/apply", async (req, res) => {
+  console.log("APPLY REQUEST RECEIVED:", req.body);
+
+  const { name, email, country, vehicle, message } = req.body;
+
+  try {
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    // This will throw an error if credentials are wrong
+    await transporter.verify();
+    console.log("SMTP connection verified");
+
+    await transporter.sendMail({
+      from: `"Private Automotive Rally" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      subject: "New Application",
+      html: `
+        <h2>New Application</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Country:</strong> ${country}</p>
+        <p><strong>Vehicle:</strong> ${vehicle}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    });
+
+    console.log("Email sent successfully");
+    return res.status(200).json({ success: true });
+
+  } catch (err) {
+    console.error("EMAIL ERROR FULL:", err);
+    return res.status(500).json({
+      error: err.message,
+      code: err.code,
+    });
+  }
+});
+
+app.listen(5000, () => {
+  console.log("Backend running on http://localhost:5000");
+});

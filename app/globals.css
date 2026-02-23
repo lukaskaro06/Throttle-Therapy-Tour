@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   GLOBAL BASE
+   ========================= */
+
+html,
+body {
+  background-color: #0b0b0b;
+  color: #e5e5e5;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   SUBTLE GRAIN / NOISE (2026 FEEL)
+   ========================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+/* =========================
+   TYPOGRAPHY POLISH
+   ========================= */
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+p {
+  letter-spacing: 0.01em;
+}
+
+/* =========================
+   LUXURY UTILITIES
+   ========================= */
+
+.glass {
+  background: rgba(2, 2, 2, 0.45);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glow-gold {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-gold:hover {
+  box-shadow: 0 0 40px rgba(198, 168, 90, 0.25);
+}
+
+/* =========================
+   INTERACTION POLISH
+   ========================= */
+
+a,
+button {
+  transition: all 0.3s ease;
+}
