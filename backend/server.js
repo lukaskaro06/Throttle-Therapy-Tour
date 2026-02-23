@@ -8,14 +8,7 @@ dotenv.config();
 const app = express();
 
 // Allow both localhost (development) and Vercel (production)
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "https://throttle-therapy-tour.vercel.app/apply",
-    ],
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
