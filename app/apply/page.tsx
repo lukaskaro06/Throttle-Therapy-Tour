@@ -22,7 +22,7 @@ export default function ApplyPage() {
     };
 
     try {
-      const res = await fetch("https://throttle-therapy-tour.onrender.com", {
+      const res = await fetch("https://throttle-therapy-tour.onrender.com/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
