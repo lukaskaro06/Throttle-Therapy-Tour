@@ -3,6 +3,10 @@ import cors from "cors";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 
+
+const cors = require("cors");
+app.use(cors());
+
 dotenv.config();
 
 const app = express();
