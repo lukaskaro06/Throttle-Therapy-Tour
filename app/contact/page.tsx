@@ -41,7 +41,8 @@ export default function ContactPage() {
             Location
           </p>
           <p className="text-lg">
-            Europe · Invitation Only
+            Europe
+            (More coming soon)
           </p>
         </div>
 
