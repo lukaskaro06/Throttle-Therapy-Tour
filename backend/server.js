@@ -26,9 +26,9 @@ app.post("/apply", async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: "onboarding@resend.dev", // default sender for testing
-      to: "yourgmail@gmail.com",     // where you want to receive it
-      subject: "New Application",
+      from: "dev@gmail.com", // default sender for testing
+      to: "vadl.auto.events@gmail.com",     // where you want to receive it
+      subject: "APLlICATION",
       text: `
 Name: ${name}
 Email: ${email}
