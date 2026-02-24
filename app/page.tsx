@@ -2,7 +2,7 @@
 
 import Navbar from "./Navbar";
 import { motion } from "framer-motion";
-import bg from "./assets/logottt.jpeg";
+import bg from "./assets/wallhomettt.jpeg";
 
 export default function Home() {
   return (
