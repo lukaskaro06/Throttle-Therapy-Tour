@@ -37,7 +37,7 @@ export default function InfoPage() {
         <div>
           <h2 className="text-3xl font-serif mb-6">Experience</h2>
           <p className="text-white/75 leading-relaxed text-lg">
-            added soon
+            High end rally experience for a select group of automotive enthusiasts. Themed road trip will span multiple days, covering hundreds of miles through scenic routes. Participants will enjoy a blend of spirited driving, camaraderie, and curated stops at unique locations. The tour is designed to be more than just a drive – it's an immersive experience that celebrates the joy of motoring and the thrill of discovery.
           </p>
         </div>
 
