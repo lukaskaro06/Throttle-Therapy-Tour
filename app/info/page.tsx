@@ -3,7 +3,7 @@
 import Navbar from "../Navbar";
 import { motion, Variants } from "framer-motion";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 60 },
   show: {
     opacity: 1,
