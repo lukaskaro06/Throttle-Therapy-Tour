@@ -1,7 +1,7 @@
 "use client";
 
 import Navbar from "../Navbar";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
