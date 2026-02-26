@@ -187,7 +187,7 @@ function HorizontalArchive() {
     offset: ["start start", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
 
   return (
     <section
@@ -196,16 +196,14 @@ function HorizontalArchive() {
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
 
-        <div className="absolute top-14 left-20 flex items-center gap-6">
-          <div className="w-8 h-[1px] bg-white/20" />
-          <span className="text-[9px] uppercase tracking-[0.6em] text-white/15 font-medium">
-            private archive
-          </span>
+        {/* Minimal Label */}
+        <div className="absolute top-14 left-24 text-[9px] uppercase tracking-[0.6em] text-white/15">
+          private archive
         </div>
 
         <motion.div
           style={{ x }}
-          className="flex gap-20 px-24"
+          className="flex gap-16 px-24"
         >
           {[
             "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7",
@@ -215,7 +213,7 @@ function HorizontalArchive() {
           ].map((img, i) => (
             <div
               key={i}
-              className="w-[45vw] h-[65vh] relative flex-shrink-0"
+              className="w-[42vw] h-[60vh] relative flex-shrink-0"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
