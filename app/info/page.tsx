@@ -11,71 +11,50 @@ export default function InfoPage() {
       <Navbar />
 
       {/* ================= HERO ================= */}
-{/* ================= HERO ================= */}
-<section className="relative bg-black border-b border-white/10">
+      <section className="relative bg-black border-b border-white/10 min-h-[90vh] flex items-center">
 
-  <div className="max-w-[1600px] mx-auto grid md:grid-cols-12 min-h-screen">
+        <div className="max-w-[1600px] mx-auto grid md:grid-cols-12 w-full">
 
-    {/* LEFT COLUMN — EDITORIAL META */}
-    <div className="md:col-span-3 px-10 md:px-16 py-24 flex flex-col justify-between">
+          {/* LEFT TITLE */}
+          <div className="md:col-span-7 px-12 md:px-28 py-24 flex flex-col justify-center">
 
-      <div>
-        <p className="text-[9px] uppercase tracking-[0.6em] text-white/20">
-          private publication
-        </p>
-      </div>
+            <div className="w-16 h-[1px] bg-white/30 mb-14" />
 
-      <div>
-        <p className="text-[9px] uppercase tracking-[0.6em] text-white/20">
-          volume i
-        </p>
-      </div>
+            <h1 className="font-serif text-[7.8vw] leading-[0.9] tracking-[-0.03em] font-light">
+              throttle
+              <br />
+              therapy
+            </h1>
 
-    </div>
+            <p className="mt-16 text-[11px] uppercase tracking-[0.6em] text-white/40">
+              tour information
+            </p>
 
-    {/* CENTER COLUMN — MAIN TITLE */}
-    <div className="md:col-span-5 px-10 md:px-16 py-24 flex flex-col justify-center">
+          </div>
 
-      <div className="w-12 h-[1px] bg-white/30 mb-14" />
+          {/* RIGHT IMAGE (FLOAT STYLE) */}
+          <div className="md:col-span-5 flex items-end justify-end pr-12 md:pr-24 pb-16">
 
-      <h1 className="font-serif text-[6vw] leading-[0.95] tracking-[-0.02em] font-light">
-        throttle
-        <br />
-        therapy
-      </h1>
+            <div
+              className="w-[85%] h-[70vh] bg-cover bg-center"
+              style={{
+                backgroundImage:
+                  "url(https://images.unsplash.com/photo-1511919884226-fd3cad34687c)",
+              }}
+            />
 
-      <p className="mt-14 text-[11px] uppercase tracking-[0.55em] text-white/40">
-        tour information
-      </p>
+          </div>
 
-    </div>
+        </div>
 
-    {/* RIGHT COLUMN — IMAGE PLATE */}
-    <div className="md:col-span-4 relative min-h-[60vh] md:min-h-screen">
-
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url(https://images.unsplash.com/photo-1511919884226-fd3cad34687c)",
-        }}
-      />
-
-      {/* Soft edge fade like print margin */}
-      <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/30 to-transparent" />
-
-    </div>
-
-  </div>
-
-</section>
+      </section>
 
       {/* ================= SECTION 01 ================= */}
       <section className="grid md:grid-cols-12 min-h-screen bg-neutral-950 border-t border-white/10">
 
         <div className="md:col-span-6 relative overflow-hidden">
           <div
-            className="absolute inset-0 bg-cover bg-center scale-105"
+            className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage:
                 "url(https://images.unsplash.com/photo-1503736334956-4c8f8e92946d)",
@@ -124,7 +103,7 @@ export default function InfoPage() {
 
         <div className="md:col-span-6 relative overflow-hidden order-1 md:order-2">
           <div
-            className="absolute inset-0 bg-cover bg-center scale-105"
+            className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage:
                 "url(https://images.unsplash.com/photo-1493238792000-8113da705763)",
@@ -137,7 +116,7 @@ export default function InfoPage() {
       <HorizontalArchive />
 
       {/* ================= MANIFESTO ================= */}
-      <section className="relative bg-black py-56 border-t border-white/10 text-center">
+      <section className="relative bg-black py-48 border-t border-white/10 text-center">
 
         <h2 className="font-sans font-black uppercase text-[6vw] leading-[0.92] tracking-[-0.03em]">
           when{" "}
@@ -148,36 +127,39 @@ export default function InfoPage() {
           becomes a philosophy
         </h2>
 
-        <p className="mt-20 text-[11px] uppercase tracking-[0.55em] text-white/60">
+        <p className="mt-16 text-[11px] uppercase tracking-[0.55em] text-white/60">
           entry is extended by invitation
         </p>
 
-        <div className="mt-16">
+        <div className="mt-14">
           <span className="script-font text-3xl text-white/80">
             Nick Papias
           </span>
         </div>
+
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="py-48 bg-neutral-950 border-t border-white/10 text-center">
+      <section className="py-40 bg-neutral-950 border-t border-white/10 text-center">
+
         <p className="text-[11px] uppercase tracking-[0.55em] text-white/60">
           applications reviewed privately
         </p>
 
         <a
           href="/apply"
-          className="block mt-16 text-[11px] uppercase tracking-[0.55em] text-white/70 hover:text-white transition"
+          className="block mt-14 text-[11px] uppercase tracking-[0.55em] text-white/70 hover:text-white transition"
         >
           request consideration
         </a>
+
       </section>
 
     </main>
   );
 }
 
-/* ================= ARCHIVE COMPONENT ================= */
+/* ================= CLEAN HORIZONTAL ARCHIVE ================= */
 
 function HorizontalArchive() {
   const containerRef = useRef(null);
@@ -187,23 +169,22 @@ function HorizontalArchive() {
     offset: ["start start", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-55%"]);
 
   return (
     <section
       ref={containerRef}
-      className="relative h-[200vh] bg-neutral-900 border-t border-white/10"
+      className="relative h-[170vh] bg-neutral-900 border-t border-white/10"
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
 
-        {/* Minimal Label */}
         <div className="absolute top-14 left-24 text-[9px] uppercase tracking-[0.6em] text-white/15">
           private archive
         </div>
 
         <motion.div
           style={{ x }}
-          className="flex gap-16 px-24"
+          className="flex gap-12 px-24"
         >
           {[
             "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7",
@@ -213,7 +194,7 @@ function HorizontalArchive() {
           ].map((img, i) => (
             <div
               key={i}
-              className="w-[42vw] h-[60vh] relative flex-shrink-0"
+              className="w-[35vw] h-[50vh] relative flex-shrink-0"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
