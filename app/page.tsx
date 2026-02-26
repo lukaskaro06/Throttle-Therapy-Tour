@@ -3,7 +3,7 @@
 import Navbar from "./Navbar";
 import { motion } from "framer-motion";
 import bg from "./assets/wallhometta.jpeg";
-
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"></link>
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-black text-white">

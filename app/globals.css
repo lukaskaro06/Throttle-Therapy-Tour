@@ -68,3 +68,7 @@ a,
 button {
   transition: all 0.3s ease;
 }
+
+.script-font {
+  font-family: 'Great Vibes', cursive;
+}
