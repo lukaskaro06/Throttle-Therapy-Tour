@@ -135,7 +135,7 @@ export default function InfoPage() {
         </h2>
 
         <p className="mt-16 text-[11px] uppercase tracking-[0.55em] text-white/60">
-          entry is extended by invitation
+          entry is extended by invitation only
         </p>
 
         <div className="mt-14">
