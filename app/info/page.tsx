@@ -11,16 +11,16 @@ export default function InfoPage() {
       <Navbar />
 
       {/* ================= HERO ================= */}
-      <section className="relative bg-black border-b border-white/10 min-h-[90vh] flex items-center">
+      <section className="relative bg-black min-h-[95vh] flex items-center border-b border-white/10">
 
-        <div className="max-w-[1600px] mx-auto grid md:grid-cols-12 w-full">
+        <div className="max-w-[1600px] mx-auto grid md:grid-cols-12 w-full relative">
 
           {/* LEFT TITLE */}
-          <div className="md:col-span-7 px-12 md:px-28 py-24 flex flex-col justify-center">
+          <div className="md:col-span-7 px-12 md:px-28 py-24 flex flex-col justify-center relative z-10">
 
-            <div className="w-16 h-[1px] bg-white/30 mb-14" />
+            <div className="w-16 h-[1px] bg-white/30 mb-16" />
 
-            <h1 className="font-serif text-[7.8vw] leading-[0.9] tracking-[-0.03em] font-light">
+            <h1 className="font-serif text-[8.5vw] leading-[0.88] tracking-[-0.04em] font-light">
               throttle
               <br />
               therapy
@@ -32,11 +32,11 @@ export default function InfoPage() {
 
           </div>
 
-          {/* RIGHT IMAGE (FLOAT STYLE) */}
-          <div className="md:col-span-5 flex items-end justify-end pr-12 md:pr-24 pb-16">
+          {/* RIGHT IMAGE — OVERLAPS DOWNWARD */}
+          <div className="md:col-span-5 flex items-end justify-end pr-12 md:pr-24">
 
             <div
-              className="w-[85%] h-[70vh] bg-cover bg-center"
+              className="w-[85%] h-[75vh] bg-cover bg-center translate-y-16 shadow-2xl"
               style={{
                 backgroundImage:
                   "url(https://images.unsplash.com/photo-1511919884226-fd3cad34687c)",
@@ -112,15 +112,22 @@ export default function InfoPage() {
         </div>
       </section>
 
-      {/* ================= HORIZONTAL ARCHIVE ================= */}
+      {/* ================= ARCHIVE ================= */}
       <HorizontalArchive />
+
+      {/* ================= WHITE INTERRUPTION ================= */}
+      <section className="bg-white text-black py-40 text-center">
+        <h3 className="text-[4vw] font-light tracking-tight">
+          precision is discipline
+        </h3>
+      </section>
 
       {/* ================= MANIFESTO ================= */}
       <section className="relative bg-black py-48 border-t border-white/10 text-center">
 
-        <h2 className="font-sans font-black uppercase text-[6vw] leading-[0.92] tracking-[-0.03em]">
-          when{" "}
-          <span className="relative inline-block text-[7vw]">
+        <h2 className="font-sans font-black uppercase text-[6.8vw] leading-[0.9] tracking-[-0.04em]">
+          How{" "}
+          <span className="relative inline-block text-[8vw]">
             driving
             <span className="absolute inset-0 -m-4 border-2 border-white rounded-full rotate-[-6deg]"></span>
           </span>{" "}
@@ -133,7 +140,7 @@ export default function InfoPage() {
 
         <div className="mt-14">
           <span className="script-font text-3xl text-white/80">
-            Nick Papias
+            Luka Skaro
           </span>
         </div>
 
@@ -148,7 +155,7 @@ export default function InfoPage() {
 
         <a
           href="/apply"
-          className="block mt-14 text-[11px] uppercase tracking-[0.55em] text-white/70 hover:text-white transition"
+          className="block mt-14 text-[11px] uppercase tracking-[0.55em] text-white/70"
         >
           request consideration
         </a>
@@ -159,7 +166,7 @@ export default function InfoPage() {
   );
 }
 
-/* ================= CLEAN HORIZONTAL ARCHIVE ================= */
+/* ================= CLEAN ARCHIVE ================= */
 
 function HorizontalArchive() {
   const containerRef = useRef(null);
@@ -174,7 +181,7 @@ function HorizontalArchive() {
   return (
     <section
       ref={containerRef}
-      className="relative h-[170vh] bg-neutral-900 border-t border-white/10"
+      className="relative h-[100vh] bg-neutral-900 border-t border-white/10"
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
 
@@ -194,7 +201,7 @@ function HorizontalArchive() {
           ].map((img, i) => (
             <div
               key={i}
-              className="w-[35vw] h-[50vh] relative flex-shrink-0"
+              className="w-[34vw] h-[45vh] relative flex-shrink-0"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
