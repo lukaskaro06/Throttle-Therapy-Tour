@@ -11,31 +11,64 @@ export default function InfoPage() {
       <Navbar />
 
       {/* ================= HERO ================= */}
-      <section className="relative h-screen flex items-center justify-center bg-black border-b border-white/10">
+{/* ================= HERO ================= */}
+<section className="relative bg-black border-b border-white/10">
 
-        <div
-          className="absolute inset-0 bg-cover bg-center scale-105"
-          style={{
-            backgroundImage:
-              "url(https://images.unsplash.com/photo-1511919884226-fd3cad34687c)",
-          }}
-        />
+  <div className="max-w-[1600px] mx-auto grid md:grid-cols-12 min-h-screen">
 
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black" />
+    {/* LEFT COLUMN — EDITORIAL META */}
+    <div className="md:col-span-3 px-10 md:px-16 py-24 flex flex-col justify-between">
 
-        <div className="relative z-10 text-center px-6">
-          <div className="w-16 h-[1px] bg-white/30 mx-auto mb-12" />
+      <div>
+        <p className="text-[9px] uppercase tracking-[0.6em] text-white/20">
+          private publication
+        </p>
+      </div>
 
-          <h1 className="font-serif text-[7.5vw] leading-[0.9] tracking-[-0.02em] font-light">
-            throttle therapy
-          </h1>
+      <div>
+        <p className="text-[9px] uppercase tracking-[0.6em] text-white/20">
+          volume i
+        </p>
+      </div>
 
-          <p className="mt-10 text-[11px] uppercase tracking-[0.55em] text-white/40">
-            tour information
-          </p>
-        </div>
-      </section>
+    </div>
+
+    {/* CENTER COLUMN — MAIN TITLE */}
+    <div className="md:col-span-5 px-10 md:px-16 py-24 flex flex-col justify-center">
+
+      <div className="w-12 h-[1px] bg-white/30 mb-14" />
+
+      <h1 className="font-serif text-[6vw] leading-[0.95] tracking-[-0.02em] font-light">
+        throttle
+        <br />
+        therapy
+      </h1>
+
+      <p className="mt-14 text-[11px] uppercase tracking-[0.55em] text-white/40">
+        tour information
+      </p>
+
+    </div>
+
+    {/* RIGHT COLUMN — IMAGE PLATE */}
+    <div className="md:col-span-4 relative min-h-[60vh] md:min-h-screen">
+
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1511919884226-fd3cad34687c)",
+        }}
+      />
+
+      {/* Soft edge fade like print margin */}
+      <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/30 to-transparent" />
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* ================= SECTION 01 ================= */}
       <section className="grid md:grid-cols-12 min-h-screen bg-neutral-950 border-t border-white/10">
@@ -154,12 +187,12 @@ function HorizontalArchive() {
     offset: ["start start", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"]);
 
   return (
     <section
       ref={containerRef}
-      className="relative h-[280vh] bg-neutral-900 border-t border-white/10"
+      className="relative h-[200vh] bg-neutral-900 border-t border-white/10"
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
 
@@ -172,7 +205,7 @@ function HorizontalArchive() {
 
         <motion.div
           style={{ x }}
-          className="flex gap-40 px-32"
+          className="flex gap-20 px-24"
         >
           {[
             "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7",
@@ -182,7 +215,7 @@ function HorizontalArchive() {
           ].map((img, i) => (
             <div
               key={i}
-              className="w-[62vw] h-[68vh] relative flex-shrink-0"
+              className="w-[45vw] h-[65vh] relative flex-shrink-0"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center"
