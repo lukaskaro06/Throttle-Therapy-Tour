@@ -60,7 +60,17 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* SCROLL CONTENT (comes later) */}
+      {/* VIDEO SECTION */}
+      <section className="bg-black py-0">
+        <video
+          src="/tour.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full max-h-[90vh] object-cover"
+        />
+      </section>
     </main>
   );
 }
